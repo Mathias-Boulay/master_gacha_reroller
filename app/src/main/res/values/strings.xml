@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Master GACHA Reroller</string>
+
+
+
+    <string name="reroll_confirmation_dialog_message">By performing the reroll, you\'ll lose access to the previous account<br/>Do you still want to reroll ?</string>
+
+    <string name="default_success_toast">%s has been successfully rerolled !</string>
+    <string name="default_failed_toast">%s has failed to reroll, maybe check out if it worked nonetheless ?</string>
+
+    <!--    Default app string names
+            Change the name in a language if the app has a different name there
+            Use the app package name, since it guarantees a conflict free file
+            -->
+    <string name="com.nexon.konosuba">This is a default string</string>
+</resources>

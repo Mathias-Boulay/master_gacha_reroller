@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="really_impure_white">#f5e7e3</color>
+    <color name="impure_white">#EDEDED</color>
+    <color name="impure_black">#202020</color>
+    <color name="stop_red">#ED1717</color>
+
+    <color name="middle_grey">#757575</color>
+</resources>

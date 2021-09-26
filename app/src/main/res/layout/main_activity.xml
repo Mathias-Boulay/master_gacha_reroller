@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ImageButton
+        android:id="@+id/reroll_activity_coffee"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_coffee"
+        app:layout_constraintBottom_toBottomOf="@+id/reroll_activity_title"
+
+        app:layout_constraintStart_toStartOf="@+id/reroll_activity_search_bar"
+        app:layout_constraintTop_toTopOf="@+id/reroll_activity_title" />
+
+
+
+    <TextView
+        android:id="@+id/reroll_activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/app_name"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/reroll_activity_help"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackground"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_help"
+        app:layout_constraintBottom_toBottomOf="@+id/reroll_activity_title"
+        app:layout_constraintEnd_toEndOf="@+id/reroll_activity_search_bar"
+
+        app:layout_constraintTop_toTopOf="@+id/reroll_activity_title" />
+
+    <fr.spse.master_gacha_reroller.custom_views.SearchBar
+        android:id="@+id/reroll_activity_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintBottom_toTopOf="@id/reroll_activity_recycler_view"
+        app:layout_constraintTop_toTopOf="@+id/reroll_activity_recycler_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reroll_activity_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reroll_activity_title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

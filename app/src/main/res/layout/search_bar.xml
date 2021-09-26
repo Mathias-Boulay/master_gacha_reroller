@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/search_bar_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="9dp"
+        android:src="@drawable/ic_search"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/search_bar_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_marginEnd="18dp"
+
+        android:hint="Search by (package) name"
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/middle_grey"
+
+        app:layout_constraintStart_toEndOf="@id/search_bar_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+
+
+</LinearLayout>
