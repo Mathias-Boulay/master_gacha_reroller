@@ -18,6 +18,7 @@ import com.hoko.blur.HokoBlur;
 
 import fr.spse.master_gacha_reroller.R;
 import fr.spse.master_gacha_reroller.custom_views.rerollableAppItem;
+import fr.spse.master_gacha_reroller.utils.Command;
 import fr.spse.master_gacha_reroller.utils.ImageUtils;
 
 /**
@@ -125,7 +126,14 @@ public abstract class BaseRerollableApp implements Rerollable, SortedListAdapter
         return isSameModelAs(model);
     }
 
+    /** Kill the application to avoid unwanted file tampering */
+    @CallSuper
+    @Override
+    public void onPreReroll(){
+        Command.killApp(getAppPackageName());
+    }
 
+    /** Auto call the fail or success callback by default */
     @CallSuper
     @Override
     public void onPostReroll(boolean success) {
