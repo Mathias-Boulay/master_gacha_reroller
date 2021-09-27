@@ -26,6 +26,10 @@ public class Command {
         return execute("rm -Rf \"" + folderPath + "\"");
     }
 
+    public static boolean killApp(String packageName){
+        return execute("am force-stop " + packageName);
+    }
+
 
     /** Convenience method for executing a single command */
     public static boolean execute(String command){
