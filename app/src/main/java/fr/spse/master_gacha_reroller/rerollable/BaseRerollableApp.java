@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
+import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
 
 import com.github.wrdlbrnft.sortedlistadapter.SortedListAdapter;
@@ -42,7 +43,7 @@ public abstract class BaseRerollableApp implements Rerollable, SortedListAdapter
     private void getApplicationInfo(Context ctx){
         try {
             applicationInfo = ctx.getPackageManager().getApplicationInfo(packageName, 0);
-        } catch (PackageManager.NameNotFoundException e) {e.printStackTrace();}
+        } catch (PackageManager.NameNotFoundException ignored) {}
     }
 
     public void setupData(rerollableAppItem holderView){
@@ -124,6 +125,13 @@ public abstract class BaseRerollableApp implements Rerollable, SortedListAdapter
         return isSameModelAs(model);
     }
 
+
+    @CallSuper
+    @Override
+    public void onPostReroll(boolean success) {
+        if(success) onRerollSuccess();
+        else onRerollFail();
+    }
 
     /** Default implementation that can be called by subClasses */
     @Override
