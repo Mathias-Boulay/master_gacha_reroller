@@ -13,4 +13,7 @@
             Use the app package name, since it guarantees a conflict free file
             -->
     <string name="com.nexon.konosuba">This is a default string</string>
+    <string name="com.bandainamcoent.saomd">SAO : MD</string>
+    <string name="com.bandainamcoent.saomdeu">SAO : MD</string>
+
 </resources>
