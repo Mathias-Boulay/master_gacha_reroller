@@ -130,11 +130,11 @@ public class rerollableAppItem extends ConstraintLayout{
        setClickableButtonState(false);
        rerollableApp.onPreReroll();
        new Thread(() -> {
-           rerollableApp.reroll();
+           boolean success = rerollableApp.reroll();
            //Guarantee being in the UI thread
            new Handler(Looper.getMainLooper()).post(() -> {
                setClickableButtonState(true);
-               rerollableApp.onPostReroll();
+               rerollableApp.onPostReroll(success);
            });
        }).start();
     }
