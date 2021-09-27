@@ -17,19 +17,19 @@ public class Command {
 
 
     /** Convenience method to remove a file the UNIX way */
-    public static void removeFile(String filePath){
-        execute("rm -f \"" + filePath + "\"");
+    public static boolean removeFile(String filePath){
+        return execute("rm -f \"" + filePath + "\"");
     }
 
     /** Convenience method to remove a folder the UNIX way */
-    public static void removeFolder(String folderPath){
-        execute("rm -Rf \"" + folderPath + "\"");
+    public static boolean removeFolder(String folderPath){
+        return execute("rm -Rf \"" + folderPath + "\"");
     }
 
 
     /** Convenience method for executing a single command */
-    public static void execute(String command){
-        execute(new ArrayList<>(Collections.singletonList(command)), true);
+    public static boolean execute(String command){
+        return execute(new ArrayList<>(Collections.singletonList(command)), true);
     }
 
     /**
