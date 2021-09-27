@@ -18,18 +18,18 @@ public class Command {
 
     /** Convenience method to remove a file the UNIX way */
     public static void removeFile(String filePath){
-        execute("rm -f \"" + filePath + "\"", true);
+        execute("rm -f \"" + filePath + "\"");
     }
 
     /** Convenience method to remove a folder the UNIX way */
     public static void removeFolder(String folderPath){
-        execute("rm -Rf \"" + folderPath + "\"", true);
+        execute("rm -Rf \"" + folderPath + "\"");
     }
 
 
-    /** Convenience method for executing a list of commands */
-    public static void execute(String command, boolean isSuperUser){
-        execute(new ArrayList<>(Collections.singletonList(command)), isSuperUser);
+    /** Convenience method for executing a single command */
+    public static void execute(String command){
+        execute(new ArrayList<>(Collections.singletonList(command)), true);
     }
 
     /**
