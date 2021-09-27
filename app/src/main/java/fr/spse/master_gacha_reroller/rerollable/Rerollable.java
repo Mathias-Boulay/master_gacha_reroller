@@ -16,9 +16,8 @@ public interface Rerollable {
     /**
      * Call when the reroll must be executed.
      * Any implementation MUST call either onRerollSuccess on onRerollFail
-     * @return Whether the reroll STARTED, not if it ended.
      */
-    boolean reroll();
+    void reroll();
 
     /**
      * Call after the reroll execution, regardless of the success state.

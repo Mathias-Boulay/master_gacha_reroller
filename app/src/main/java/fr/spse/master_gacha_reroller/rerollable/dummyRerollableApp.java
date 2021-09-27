@@ -18,9 +18,8 @@ public class dummyRerollableApp extends BaseRerollableApp {
     }
 
     @Override
-    public boolean reroll() {
+    public void reroll() {
         //START REROLL
-        return true;
     }
 
     @Override
