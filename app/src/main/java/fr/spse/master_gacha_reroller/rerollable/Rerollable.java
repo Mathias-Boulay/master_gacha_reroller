@@ -16,25 +16,26 @@ public interface Rerollable {
     /**
      * Call when the reroll must be executed.
      * Any implementation MUST call either onRerollSuccess on onRerollFail
+     * @return Whether or not the reroll succeeded
      */
-    void reroll();
+    boolean reroll();
 
     /**
      * Call after the reroll execution, regardless of the success state.
-     * Usually used to do cleanup.
+     * Usually used to do cleanup, no need to call it on the UI thread
      */
-    void onPostReroll();
+    void onPostReroll(boolean success);
 
     /**
      * Call when the reroll succeeded. Do what you want but inform the user.
-     * Calling on the UI thread isn't guaranteed but is advised
+     * Calling on the UI thread is advised
      */
     void onRerollSuccess();
 
 
     /**
      * Call when the reroll failed. Do what you want but inform the user.
-     * Calling on the UI thread isn't guaranteed but is advised
+     * Calling on the UI thread is advised
      */
     void onRerollFail();
 
