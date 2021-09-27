@@ -12,20 +12,10 @@ public class Sao_MD extends BaseRerollableApp {
     }
 
     @Override
-    public void onPreReroll() {
-    }
-
-    @Override
     public boolean reroll() {
         boolean success;
         success = Command.removeFolder(getPrivateDataDir() + "/shared_prefs");
         success &= Command.removeFolder(getPrivateDataDir() + "/memories");
         return success;
-    }
-
-    @Override
-    public void onPostReroll(boolean success) {
-        super.onPostReroll(success);
-
     }
 }
