@@ -47,7 +47,7 @@ public abstract class BaseRerollableApp implements Rerollable, SortedListAdapter
         } catch (PackageManager.NameNotFoundException ignored) {}
     }
 
-    public void setupData(rerollableAppItem holderView){
+    final public void setupData(rerollableAppItem holderView){
         this.holderView = holderView;
 
         setupArtwork();
@@ -73,7 +73,7 @@ public abstract class BaseRerollableApp implements Rerollable, SortedListAdapter
     }
 
     /** Tells if we have an appInfo, meaning "is the app is installed on the device ?" */
-    public boolean isAppInfoAvailable(){
+    final public boolean isAppInfoAvailable(){
         return applicationInfo != null;
     }
 
@@ -116,13 +116,13 @@ public abstract class BaseRerollableApp implements Rerollable, SortedListAdapter
 
     /** Comparator for the sorted app list*/
     @Override
-    public <T> boolean isSameModelAs(@NonNull T model) {
+    final public <T> boolean isSameModelAs(@NonNull T model) {
         if(!(model instanceof BaseRerollableApp)) return false;
         return ((BaseRerollableApp)model).getAppPackageName().equals(getAppPackageName());
     }
     /** Comparator for the sorted app list*/
     @Override
-    public <T> boolean isContentTheSameAs(@NonNull T model) {
+    final public <T> boolean isContentTheSameAs(@NonNull T model) {
         return isSameModelAs(model);
     }
 
