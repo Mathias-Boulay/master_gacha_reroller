@@ -10,7 +10,7 @@ import fr.spse.master_gacha_reroller.rerollable.app.Sao_MD;
 /**
  * Data class used for storing rerollable apps
  */
-public class RerollAppList {
+final public class RerollAppList {
     /** Remove instantiation */
     private RerollAppList(){}
     

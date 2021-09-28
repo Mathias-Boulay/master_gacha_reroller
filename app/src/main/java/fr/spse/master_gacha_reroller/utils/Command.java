@@ -13,8 +13,9 @@ import java.util.Collections;
  * It mainly consists of wrappers to help with basic commands.
  * As of 27/09/2021, we assume commands need to be executed in SU.
  */
-public class Command {
-
+final public class Command {
+    /** Remove the ability to be instantiated*/
+    private Command(){}
 
     /** Convenience method to remove a file the UNIX way */
     public static boolean removeFile(String filePath){
