@@ -13,19 +13,8 @@ public class dummyRerollableApp extends BaseRerollableApp {
     }
 
     @Override
-    public void onPreReroll() {
-        //PREPARE REROLL
-    }
-
-    @Override
     public boolean reroll() {
         //START REROLL
         return false;
-    }
-
-    @Override
-    public void onPostReroll(boolean success) {
-        super.onPostReroll(success);
-        //DO CLEANUP
     }
 }
