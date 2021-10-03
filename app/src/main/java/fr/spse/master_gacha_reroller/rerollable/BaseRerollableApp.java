@@ -92,21 +92,52 @@ public abstract class BaseRerollableApp implements Rerollable, SortedListAdapter
         if(applicationInfo == null) return "";
         return applicationInfo.sourceDir;
     }
-    /** Wrapper for private data directory */
-    @SuppressLint("SdCardPath")
+
+
+    /** Flags for the usual app directories */
+    public static final int DIR_SHARED_PREFS = 0x1;
+    public static final int DIR_FILES = 0x2;
+    public static final int DIR_CACHE = 0x3;
+    public static final int DIR_DATABASES = 0x4;
+    public static final int DIR_APP_WEBVIEW = 0x5;
+
+    /** Wrapper for private data directory without any flag*/
     final public String getPrivateDataDir(){
+        return getPrivateDataDir(0);
+    }
+
+    /** Wrapper for private data directory, with an optional flag for usual app paths*/
+    @SuppressLint("SdCardPath")
+    final public String getPrivateDataDir(int flag){
         if(applicationInfo == null) return "";
 
+        String appPath = "";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return applicationInfo.deviceProtectedDataDir;
+            appPath = applicationInfo.dataDir;
         }else{ //TODO FIX IMPROPER ASS SUPPORT
-            return "/data/data/" + packageName;
+            appPath = "/data/data/" + packageName;
         }
+
+        /* If a flag is specified, add it to the path */
+        if(flag == DIR_SHARED_PREFS) appPath += "/shared_prefs";
+        if(flag == DIR_FILES) appPath += "/files";
+        if(flag == DIR_CACHE) appPath += "/cache";
+        if(flag == DIR_DATABASES) appPath += "/databases";
+        if(flag == DIR_APP_WEBVIEW) appPath += "app_webview";
+
+        return appPath;
     }
     /** Wrapper for app "public" data dir */
-    final public String getPublicDataDir(){
+    final public String getPublicDataDir(){return getPublicDataDir(0);}
+
+    final public String getPublicDataDir(int flag){
         if(applicationInfo == null) return "";
-        return applicationInfo.dataDir;
+        String appPath = "/storage/emulated/0/Android/data/" + getAppPackageName();
+
+        if(flag == DIR_FILES) appPath += "/files";
+        if(flag == DIR_CACHE) appPath += "/cache";
+
+        return appPath;
     }
     /** Wrapper for artwork bitmap */
     final public Bitmap getArtworkBitmap(){

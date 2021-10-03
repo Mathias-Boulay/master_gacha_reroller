@@ -19,7 +19,7 @@ final public class Command {
 
     /** Convenience method to remove a file the UNIX way */
     public static boolean removeFile(String filePath){
-        return execute("rm -f \"" + filePath + "\"");
+        return execute("rm -f " + filePath);
     }
 
     /** Convenience method to remove a folder the UNIX way */
