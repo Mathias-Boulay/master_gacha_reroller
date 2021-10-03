@@ -5,6 +5,8 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.spse.master_gacha_reroller.rerollable.app.DBZDokanBattle;
+import fr.spse.master_gacha_reroller.rerollable.app.DBZDokanBattleJP;
 import fr.spse.master_gacha_reroller.rerollable.app.Sao_MD;
 
 /**
@@ -18,6 +20,9 @@ final public class RerollAppList {
     
     public static void initList(Context ctx){
         rerollableAppList.add(new Sao_MD(ctx));
+        rerollableAppList.add(new DBZDokanBattle(ctx));
+        rerollableAppList.add(new DBZDokanBattleJP(ctx));
+
     }
 
 }
