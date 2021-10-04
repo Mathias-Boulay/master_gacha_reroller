@@ -89,15 +89,21 @@ To help you provide custom reroll logic faster, convenience functions are provid
 <details><summary>BaseRerollableApp functions</summary>
 
 ```java
-final public String getPrivateDataDir()
+final public String getPrivateDataDir(int flag = 0)
 ```
 **@return:** The app private data directory *(Traditionally /data/data/com.package.name)*
 
+Since by default you get the root of an app directory, you are provided several flags to access the ususal directories inside it:
+```java
+DIR_SHARED_PREF, DIR_FILES, DIR_CACHE, DIR_DATABASES, DIR_APP_WEBVIEW
+```
+
 ---
 ```java
-final public String getPublicDataDir()
+final public String getPublicDataDir(int flag = 0)
 ```
 **@return:** The app public data dir *(Traditionally /sdcard/Android/com.package.name)*
+
 
 ---
 ```java
