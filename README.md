@@ -2,7 +2,7 @@
 <p align="center"><img src="https://i.ibb.co/r3dDvW9/MGR-logo.png" alt="MGR-logo" border="0"></p>
 
 Axari is a lightweight app aiming at easing the life of players of games with gacha mechanics by allowing them do perform **fast rerolls instead of a standard reroll**. <br>
-Fast reroll is rerolling without having to uninstall and redownload all game files.
+**Fast reroll is rerolling without having to uninstall and redownload all game files.**
 
 If your game of choice isn't there, don't panic !
 It is faster to add support here than doing standard reroll anyway :sweat_smile:
