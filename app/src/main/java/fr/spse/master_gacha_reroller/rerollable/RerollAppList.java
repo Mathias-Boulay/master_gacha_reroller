@@ -7,6 +7,7 @@ import java.util.List;
 
 import fr.spse.master_gacha_reroller.rerollable.app.DBZDokanBattle;
 import fr.spse.master_gacha_reroller.rerollable.app.DBZDokanBattleJP;
+import fr.spse.master_gacha_reroller.rerollable.app.GenshinImpact;
 import fr.spse.master_gacha_reroller.rerollable.app.Sao_MD;
 
 /**
@@ -22,7 +23,6 @@ final public class RerollAppList {
         rerollableAppList.add(new Sao_MD(ctx));
         rerollableAppList.add(new DBZDokanBattle(ctx));
         rerollableAppList.add(new DBZDokanBattleJP(ctx));
-
+        rerollableAppList.add(new GenshinImpact(ctx));
     }
-
 }

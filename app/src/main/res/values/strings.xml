@@ -16,5 +16,6 @@
     <string name="com.bandainamcoent.saomd">SAO : MD</string>
     <string name="com.bandainamcogames.dbzdokkanww">Dokkan Battle</string>
     <string name="com.bandainamcogames.dbzdokkan">Dokkan Battle JP</string>
+    <string name="com.miHoYo.GenshinImpact">Genshin Impact</string>
 
 </resources>
